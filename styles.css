@@ -62,6 +62,38 @@ body {
 
 .rsvp-page { padding: 28px 16px 48px; }
 
+.rsvp-page {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+}
+
+.rsvp-page::before,
+.rsvp-page::after {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+}
+
+.rsvp-page::before {
+  top: 0;
+  left: 0;
+  width: min(46vw, 270px);
+  height: 240px;
+  background: url("rsvp-orchid-cablecar.png") top left / 470px auto no-repeat;
+}
+
+.rsvp-page::after {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: min(37vh, 380px);
+  background:
+    linear-gradient(180deg, rgba(248,244,236,.82), rgba(248,244,236,.14)),
+    url("rsvp-orchid-cablecar.png") center bottom / cover no-repeat;
+}
+
 .rsvp-shell {
   position: relative;
   width: min(100%, 710px);
@@ -69,7 +101,7 @@ body {
   padding: clamp(32px, 7vw, 64px) clamp(20px, 7vw, 74px) 42px;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: rgba(255, 253, 249, .84);
+  background: rgba(255, 253, 249, .91);
   box-shadow: 0 16px 35px rgba(69, 50, 35, .10);
 }
 
@@ -223,6 +255,45 @@ input[type="radio"] { accent-color: var(--copper-dark); }
   color: var(--green);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.15rem;
+  text-decoration-color: var(--copper);
+  text-underline-offset: 4px;
+}
+
+.card-page { padding: 0 0 24px; }
+
+.card-gallery {
+  width: min(100%, 760px);
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--ivory);
+}
+
+.card-gallery > img,
+.card-rsvp-image > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.card-rsvp-image { position: relative; }
+
+.card-action {
+  position: absolute;
+  display: block;
+  border-radius: 26px;
+}
+
+.card-action:focus-visible { outline: 3px solid #fff; outline-offset: -4px; }
+
+.card-rsvp-action { top: 21.33%; left: 12.89%; width: 49.19%; height: 7.51%; }
+.card-map-action { top: 21.33%; left: 71%; width: 15.73%; height: 7.51%; }
+
+.download-card { margin: 20px 16px 0; text-align: center; }
+
+.download-card a {
+  color: var(--green);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.12rem;
   text-decoration-color: var(--copper);
   text-underline-offset: 4px;
 }
