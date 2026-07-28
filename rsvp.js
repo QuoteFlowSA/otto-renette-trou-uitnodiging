@@ -1,4 +1,5 @@
 const form = document.querySelector('#rsvp-form');
+const googleFormEndpoint = 'https://docs.google.com/forms/d/e/1FAIpQLSeBqYd4I555VQzrUDKACt1eE6qWdHZwemK_V3iee8t-jjWC-A/formResponse';
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -18,5 +19,21 @@ form.addEventListener('submit', (event) => {
   if (dietary) lines.push(`Dieetvereistes/allergiee: ${dietary}`);
   if (message) lines.push(`Boodskap: ${message}`);
   lines.push('', 'Groete');
-  window.location.href = `https://wa.me/27832746865?text=${encodeURIComponent(lines.join('\n'))}`;
+
+  const sheetResponse = new URLSearchParams({
+    'entry.2130879815': name,
+    'entry.1473269708': attendance,
+    'entry.1043739622': dietary,
+    'entry.933605355': message,
+  });
+
+  fetch(googleFormEndpoint, {
+    method: 'POST',
+    mode: 'no-cors',
+    body: sheetResponse,
+    keepalive: true,
+  }).catch(() => undefined);
+
+  const whatsappUrl = `https://wa.me/27832746865?text=${encodeURIComponent(lines.join('\n'))}`;
+  window.setTimeout(() => { window.location.href = whatsappUrl; }, 500);
 });
