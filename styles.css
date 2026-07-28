@@ -50,6 +50,11 @@ body {
 
 .envelope-link:focus-visible { box-shadow: 0 0 0 3px rgba(187, 119, 77, .45); }
 
+.envelope-link.is-opening {
+  pointer-events: none;
+  transform: none;
+}
+
 .envelope-link img { display: block; width: 100%; height: auto; }
 
 .tap-note {
@@ -62,64 +67,28 @@ body {
 
 .rsvp-page { padding: 28px 16px 48px; }
 
-.rsvp-page {
-  position: relative;
-  isolation: isolate;
-  overflow-x: hidden;
-}
-
-.rsvp-page::before,
-.rsvp-page::after {
-  position: fixed;
-  z-index: 0;
-  pointer-events: none;
-  content: "";
-}
-
-.rsvp-page::before {
-  top: 0;
-  left: 0;
-  width: min(46vw, 270px);
-  height: 240px;
-  background: url("rsvp-orchid-cablecar.png") top left / 470px auto no-repeat;
-}
-
-.rsvp-page::after {
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: min(37vh, 380px);
-  background:
-    linear-gradient(180deg, rgba(248,244,236,.82), rgba(248,244,236,.14)),
-    url("rsvp-orchid-cablecar.png") center bottom / cover no-repeat;
-}
-
 .rsvp-shell {
   position: relative;
-  z-index: 1;
   width: min(100%, 710px);
   margin: 0 auto;
-  padding: clamp(32px, 7vw, 64px) clamp(20px, 7vw, 74px) 42px;
+  padding: clamp(122px, 15vw, 154px) clamp(20px, 7vw, 74px) 0;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: rgba(255, 253, 249, .91);
+  background: #fffdf9;
   box-shadow: 0 16px 35px rgba(69, 50, 35, .10);
 }
 
-.rsvp-shell::before,
-.rsvp-shell::after {
+.rsvp-orchid-decor {
   position: absolute;
-  width: 128px;
-  height: 128px;
-  border: 1px solid rgba(187,119,77,.35);
-  border-radius: 50%;
-  content: "";
+  z-index: 0;
+  top: -10px;
+  left: -22px;
+  width: min(50vw, 280px);
+  height: auto;
+  pointer-events: none;
 }
 
-.rsvp-shell::before { top: -84px; left: -82px; }
-.rsvp-shell::after { right: -84px; bottom: -86px; }
-
-.rsvp-content { position: relative; z-index: 1; }
+.rsvp-content { position: relative; z-index: 1; padding-bottom: 35px; }
 
 .eyebrow {
   margin: 0 0 9px;
@@ -260,6 +229,36 @@ input[type="radio"] { accent-color: var(--copper-dark); }
   text-underline-offset: 4px;
 }
 
+.rsvp-cablecar {
+  position: relative;
+  z-index: 1;
+  height: clamp(190px, 33vw, 270px);
+  margin: 0;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  background: var(--ivory-deep);
+}
+
+.rsvp-cablecar::before {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 54px;
+  background: linear-gradient(180deg, rgba(255,253,249,.9), transparent);
+  content: "";
+  pointer-events: none;
+}
+
+.rsvp-cablecar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 52%;
+}
+
 .card-page { padding: 0 0 24px; }
 
 .card-gallery {
@@ -301,6 +300,7 @@ input[type="radio"] { accent-color: var(--copper-dark); }
 
 @media (max-width: 420px) {
   .rsvp-page { padding: 12px 8px 26px; }
-  .rsvp-shell { padding: 34px 18px; }
+  .rsvp-shell { padding: 122px 18px 0; }
+  .rsvp-orchid-decor { top: -8px; left: -18px; width: 220px; }
   .attendance-options { grid-template-columns: 1fr; }
 }
