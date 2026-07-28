@@ -11,45 +11,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="rsvp-page">
-    <main class="rsvp-shell">
-      <img class="rsvp-orchid-decor" src="rsvp-orchid-clean.png" alt="" aria-hidden="true" />
-      <section class="rsvp-content" aria-labelledby="page-title">
+  <body class="rsvp-page rsvp-canva-page">
+    <main class="canva-rsvp" aria-label="RSVP en kontakbesonderhede">
+      <img class="canva-rsvp-art" src="07-rsvp.png" alt="RSVP, kontakbesonderhede en kaart na Red Ivory" fetchpriority="high" />
+      <button class="canva-rsvp-action" id="open-rsvp" type="button" aria-haspopup="dialog" aria-controls="rsvp-dialog" aria-label="Klik hier om te RSVP"></button>
+      <a class="canva-map-action" href="https://maps.app.goo.gl/ork2JLyCaEhS6G249" target="_blank" rel="noopener" aria-label="Maak die kaart na Red Ivory oop"></a>
+    </main>
+
+    <dialog class="rsvp-dialog" id="rsvp-dialog" aria-labelledby="form-title">
+      <div class="rsvp-dialog-inner">
+        <button class="dialog-close" id="close-rsvp" type="button" aria-label="Maak RSVP-vorm toe">&times;</button>
         <p class="eyebrow">1 Desember 2026 &middot; Red Ivory</p>
-        <h1 id="page-title">RSVP</h1>
+        <h1 id="form-title">RSVP</h1>
         <p class="names">Otto &amp; Renette</p>
         <div class="ornament" aria-hidden="true">&hearts;</div>
         <p class="intro-copy">Ons sal dit waardeer as julle asseblief teen <strong>31 Augustus 2026</strong> laat weet of julle die viering kan bywoon.</p>
         <p class="guest-note">Om ons viering intiem te hou, is hierdie uitnodiging met liefde gerig aan die persone wie se name daarop verskyn. Ons vra vriendelik dat geen ekstra gaste saamgebring word nie.</p>
 
-        <div class="rsvp-form-scene">
-          <form class="rsvp-form" id="rsvp-form">
-            <div class="form-field">
-              <label for="guest-name">Volle naam</label>
-              <input id="guest-name" name="guest-name" type="text" autocomplete="name" required />
+        <form class="rsvp-form rsvp-dialog-form" id="rsvp-form">
+          <div class="form-field">
+            <label for="guest-name">Volle naam</label>
+            <input id="guest-name" name="guest-name" type="text" autocomplete="name" required />
+          </div>
+          <fieldset>
+            <legend>Sal jy die troue kan bywoon?</legend>
+            <div class="attendance-options">
+              <label class="attendance-option"><input name="attendance" type="radio" value="Ja, met graagte" required /> Ja, met graagte</label>
+              <label class="attendance-option"><input name="attendance" type="radio" value="Nee, ongelukkig nie" required /> Nee, ongelukkig nie</label>
             </div>
-            <fieldset>
-              <legend>Sal jy die troue kan bywoon?</legend>
-              <div class="attendance-options">
-                <label class="attendance-option"><input name="attendance" type="radio" value="Ja, met graagte" required /> Ja, met graagte</label>
-                <label class="attendance-option"><input name="attendance" type="radio" value="Nee, ongelukkig nie" required /> Nee, ongelukkig nie</label>
-              </div>
-            </fieldset>
-            <div class="form-field">
-              <label for="dietary">Dieetvereistes of allergie&euml; <span aria-hidden="true">(opsioneel)</span></label>
-              <input id="dietary" name="dietary" type="text" />
-            </div>
-            <div class="form-field">
-              <label for="message">Boodskap vir die bruidspaar <span aria-hidden="true">(opsioneel)</span></label>
-              <textarea id="message" name="message"></textarea>
-            </div>
-            <button class="submit-button" type="submit">Stuur RSVP op WhatsApp</button>
-            <p class="whatsapp-note">Jou antwoord word outomaties in ons RSVP-lys gestoor. WhatsApp sal dan oopmaak met jou RSVP klaar ingevul vir Renette.</p>
-          </form>
-          <a class="back-link" href="./">&larr; Terug na die uitnodiging</a>
-        </div>
-      </section>
-    </main>
+          </fieldset>
+          <div class="form-field">
+            <label for="dietary">Dieetvereistes of allergie&euml; <span aria-hidden="true">(opsioneel)</span></label>
+            <input id="dietary" name="dietary" type="text" />
+          </div>
+          <div class="form-field">
+            <label for="message">Boodskap vir die bruidspaar <span aria-hidden="true">(opsioneel)</span></label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <button class="submit-button" type="submit">Stuur RSVP op WhatsApp</button>
+          <p class="whatsapp-note">Jou antwoord word outomaties in ons RSVP-lys gestoor. WhatsApp sal dan oopmaak met jou RSVP klaar ingevul vir Renette.</p>
+        </form>
+      </div>
+    </dialog>
     <script src="rsvp.js"></script>
   </body>
 </html>

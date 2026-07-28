@@ -67,6 +67,79 @@ body {
 
 .rsvp-page { padding: 28px 16px 48px; }
 
+.rsvp-canva-page { padding: 0; }
+
+.canva-rsvp {
+  position: relative;
+  width: min(100%, 760px);
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--ivory);
+  line-height: 0;
+}
+
+.canva-rsvp-art { display: block; width: 100%; height: auto; }
+
+.canva-rsvp-action,
+.canva-map-action {
+  position: absolute;
+  top: 20.88%;
+  display: block;
+  border: 0;
+  border-radius: 28px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.canva-rsvp-action { left: 12.6%; width: 49.3%; height: 8.2%; }
+.canva-map-action { left: 70.1%; width: 17.1%; height: 8.2%; }
+
+.canva-rsvp-action:focus-visible,
+.canva-map-action:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: -5px;
+}
+
+.rsvp-dialog {
+  width: min(680px, calc(100vw - 24px));
+  max-height: calc(100vh - 24px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: #fffdf9;
+  box-shadow: 0 18px 54px rgba(48, 35, 25, .28);
+}
+
+.rsvp-dialog::backdrop { background: rgba(46, 39, 30, .56); }
+
+.rsvp-dialog-inner {
+  position: relative;
+  padding: 42px clamp(22px, 7vw, 60px) 34px;
+  background:
+    linear-gradient(rgba(255,253,249,.92), rgba(255,253,249,.92)),
+    url("rsvp-cablecar.png") center bottom / cover no-repeat;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 35px;
+  height: 35px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--green);
+  background: #fffdf9;
+  cursor: pointer;
+  font: 1.65rem/1 "Cormorant Garamond", Georgia, serif;
+}
+
+.rsvp-dialog .ornament { margin: 18px auto 20px; }
+.rsvp-dialog .intro-copy { margin-bottom: 18px; }
+.rsvp-dialog .guest-note { margin-bottom: 22px; }
+.rsvp-dialog-form { gap: 15px; }
+.rsvp-dialog .whatsapp-note { color: var(--green); }
+
 .rsvp-shell {
   position: relative;
   --shell-gutter: clamp(20px, 7vw, 74px);

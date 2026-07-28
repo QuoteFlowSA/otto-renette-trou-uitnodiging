@@ -1,7 +1,16 @@
 const form = document.querySelector('#rsvp-form');
 const googleFormEndpoint = 'https://docs.google.com/forms/d/e/1FAIpQLSeBqYd4I555VQzrUDKACt1eE6qWdHZwemK_V3iee8t-jjWC-A/formResponse';
+const rsvpDialog = document.querySelector('#rsvp-dialog');
+const openRsvp = document.querySelector('#open-rsvp');
+const closeRsvp = document.querySelector('#close-rsvp');
 
-form.addEventListener('submit', (event) => {
+openRsvp?.addEventListener('click', () => rsvpDialog?.showModal());
+closeRsvp?.addEventListener('click', () => rsvpDialog?.close());
+rsvpDialog?.addEventListener('click', (event) => {
+  if (event.target === rsvpDialog) rsvpDialog.close();
+});
+
+form?.addEventListener('submit', (event) => {
   event.preventDefault();
   const details = new FormData(form);
   const name = details.get('guest-name').trim();
