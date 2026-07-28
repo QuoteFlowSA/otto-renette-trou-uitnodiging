@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="af">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f4ec" />
+    <meta name="description" content="RSVP vir Otto en Renette se troue" />
+    <title>RSVP | Otto &amp; Renette</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="rsvp-page">
+    <main class="rsvp-shell">
+      <section class="rsvp-content" aria-labelledby="page-title">
+        <p class="eyebrow">1 Desember 2026 &middot; Red Ivory</p>
+        <h1 id="page-title">RSVP</h1>
+        <p class="names">Otto &amp; Renette</p>
+        <div class="ornament" aria-hidden="true">&hearts;</div>
+        <p class="intro-copy">Ons sal dit waardeer as julle asseblief teen <strong>31 Augustus 2026</strong> laat weet of julle die viering kan bywoon.</p>
+        <p class="guest-note">Slegs die persone wie se name op die uitnodiging verskyn, word genooi om die geleentheid by te woon.</p>
+
+        <form class="rsvp-form" id="rsvp-form">
+          <div class="form-field">
+            <label for="guest-name">Volle naam</label>
+            <input id="guest-name" name="guest-name" type="text" autocomplete="name" required />
+          </div>
+          <fieldset>
+            <legend>Sal jy die troue kan bywoon?</legend>
+            <div class="attendance-options">
+              <label class="attendance-option"><input name="attendance" type="radio" value="Ja, ek sal dit kan bywoon" required /> Ja, met graagte</label>
+              <label class="attendance-option"><input name="attendance" type="radio" value="Nee, ek kan ongelukkig nie bywoon nie" required /> Nee, ongelukkig nie</label>
+            </div>
+          </fieldset>
+          <div class="form-field">
+            <label for="dietary">Dieetvereistes of allergie&euml; <span aria-hidden="true">(opsioneel)</span></label>
+            <input id="dietary" name="dietary" type="text" />
+          </div>
+          <div class="form-field">
+            <label for="message">Boodskap vir die bruidspaar <span aria-hidden="true">(opsioneel)</span></label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <button class="submit-button" type="submit">Stuur RSVP op WhatsApp</button>
+          <p class="whatsapp-note">WhatsApp sal oopmaak met jou RSVP klaar ingevul. Tik net <strong>Stuur</strong> om dit te voltooi.</p>
+        </form>
+        <a class="back-link" href="./">&larr; Terug na die uitnodiging</a>
+      </section>
+    </main>
+    <script src="rsvp.js"></script>
+  </body>
+</html>
