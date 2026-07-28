@@ -248,6 +248,16 @@ input[type="radio"] { accent-color: var(--copper-dark); }
 
 .whatsapp-note { margin: 7px 0 0; color: #5f685f; font-size: .77rem; line-height: 1.45; text-align: center; }
 
+.rsvp-form-scene .whatsapp-note {
+  width: fit-content;
+  max-width: 100%;
+  margin: 7px auto 0;
+  padding: 9px 13px;
+  border: 1px solid rgba(255,253,249,.72);
+  background: rgba(255,253,249,.76);
+  color: var(--green);
+}
+
 .back-link {
   display: inline-block;
   margin-top: 30px;
@@ -256,6 +266,13 @@ input[type="radio"] { accent-color: var(--copper-dark); }
   font-size: 1.15rem;
   text-decoration-color: var(--copper);
   text-underline-offset: 4px;
+}
+
+.rsvp-form-scene .back-link {
+  margin-top: 23px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255,253,249,.72);
+  background: rgba(255,253,249,.76);
 }
 
 .card-page { padding: 0 0 24px; }
