@@ -22,34 +22,33 @@
         <p class="intro-copy">Ons sal dit waardeer as julle asseblief teen <strong>31 Augustus 2026</strong> laat weet of julle die viering kan bywoon.</p>
         <p class="guest-note">Om ons viering intiem te hou, is hierdie uitnodiging met liefde gerig aan die persone wie se name daarop verskyn. Ons vra vriendelik dat geen ekstra gaste saamgebring word nie.</p>
 
-        <form class="rsvp-form" id="rsvp-form">
-          <div class="form-field">
-            <label for="guest-name">Volle naam</label>
-            <input id="guest-name" name="guest-name" type="text" autocomplete="name" required />
-          </div>
-          <fieldset>
-            <legend>Sal jy die troue kan bywoon?</legend>
-            <div class="attendance-options">
-              <label class="attendance-option"><input name="attendance" type="radio" value="Ja, met graagte" required /> Ja, met graagte</label>
-              <label class="attendance-option"><input name="attendance" type="radio" value="Nee, ongelukkig nie" required /> Nee, ongelukkig nie</label>
+        <div class="rsvp-form-scene">
+          <form class="rsvp-form" id="rsvp-form">
+            <div class="form-field">
+              <label for="guest-name">Volle naam</label>
+              <input id="guest-name" name="guest-name" type="text" autocomplete="name" required />
             </div>
-          </fieldset>
-          <div class="form-field">
-            <label for="dietary">Dieetvereistes of allergie&euml; <span aria-hidden="true">(opsioneel)</span></label>
-            <input id="dietary" name="dietary" type="text" />
-          </div>
-          <div class="form-field">
-            <label for="message">Boodskap vir die bruidspaar <span aria-hidden="true">(opsioneel)</span></label>
-            <textarea id="message" name="message"></textarea>
-          </div>
-          <button class="submit-button" type="submit">Stuur RSVP op WhatsApp</button>
-          <p class="whatsapp-note">Jou antwoord word outomaties in ons RSVP-lys gestoor. WhatsApp sal dan oopmaak met jou RSVP klaar ingevul vir Renette.</p>
-        </form>
-        <a class="back-link" href="./">&larr; Terug na die uitnodiging</a>
+            <fieldset>
+              <legend>Sal jy die troue kan bywoon?</legend>
+              <div class="attendance-options">
+                <label class="attendance-option"><input name="attendance" type="radio" value="Ja, met graagte" required /> Ja, met graagte</label>
+                <label class="attendance-option"><input name="attendance" type="radio" value="Nee, ongelukkig nie" required /> Nee, ongelukkig nie</label>
+              </div>
+            </fieldset>
+            <div class="form-field">
+              <label for="dietary">Dieetvereistes of allergie&euml; <span aria-hidden="true">(opsioneel)</span></label>
+              <input id="dietary" name="dietary" type="text" />
+            </div>
+            <div class="form-field">
+              <label for="message">Boodskap vir die bruidspaar <span aria-hidden="true">(opsioneel)</span></label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+            <button class="submit-button" type="submit">Stuur RSVP op WhatsApp</button>
+            <p class="whatsapp-note">Jou antwoord word outomaties in ons RSVP-lys gestoor. WhatsApp sal dan oopmaak met jou RSVP klaar ingevul vir Renette.</p>
+          </form>
+          <a class="back-link" href="./">&larr; Terug na die uitnodiging</a>
+        </div>
       </section>
-      <figure class="rsvp-cablecar">
-        <img src="rsvp-cablecar.png" alt="Kabelkar oor Hartbeespoortdam" />
-      </figure>
     </main>
     <script src="rsvp.js"></script>
   </body>

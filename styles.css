@@ -69,9 +69,10 @@ body {
 
 .rsvp-shell {
   position: relative;
+  --shell-gutter: clamp(20px, 7vw, 74px);
   width: min(100%, 710px);
   margin: 0 auto;
-  padding: clamp(122px, 15vw, 154px) clamp(20px, 7vw, 74px) 0;
+  padding: clamp(122px, 15vw, 154px) var(--shell-gutter) 0;
   overflow: hidden;
   border: 1px solid var(--line);
   background: #fffdf9;
@@ -141,7 +142,7 @@ h1 {
 .intro-copy { margin: 0 auto 23px; max-width: 470px; line-height: 1.65; text-align: center; }
 
 .guest-note {
-  margin: 0 0 28px;
+  margin: 0;
   padding: 14px 16px;
   border: 1px solid rgba(187,119,77,.48);
   border-radius: 3px;
@@ -156,6 +157,33 @@ h1 {
 
 .rsvp-form { display: grid; gap: 18px; }
 
+.rsvp-form-scene {
+  position: relative;
+  isolation: isolate;
+  margin: 0 calc(0px - var(--shell-gutter)) -35px;
+  padding: 38px var(--shell-gutter) 42px;
+  overflow: hidden;
+  border-top: 1px solid rgba(187,119,77,.42);
+}
+
+.rsvp-form-scene::before,
+.rsvp-form-scene::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.rsvp-form-scene::before {
+  z-index: -2;
+  background: url("rsvp-cablecar.png") center 55% / cover no-repeat;
+}
+
+.rsvp-form-scene::after {
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255,253,249,.48), rgba(255,253,249,.27));
+}
+
 label, legend { color: var(--green); font-size: .88rem; font-weight: 600; }
 
 .form-field { display: grid; gap: 7px; }
@@ -166,7 +194,7 @@ input[type="text"], textarea {
   border-radius: 2px;
   padding: 13px 14px;
   color: var(--ink);
-  background: rgba(255,255,255,.7);
+  background: rgba(255,253,249,.86);
   font: inherit;
 }
 
@@ -191,6 +219,7 @@ fieldset legend { margin-bottom: 8px; }
   gap: 8px;
   border: 1px solid rgba(53,74,57,.32);
   border-radius: 2px;
+  background: rgba(255,253,249,.82);
   color: var(--green);
   cursor: pointer;
   font-size: .9rem;
@@ -227,36 +256,6 @@ input[type="radio"] { accent-color: var(--copper-dark); }
   font-size: 1.15rem;
   text-decoration-color: var(--copper);
   text-underline-offset: 4px;
-}
-
-.rsvp-cablecar {
-  position: relative;
-  z-index: 1;
-  height: clamp(190px, 33vw, 270px);
-  margin: 0;
-  overflow: hidden;
-  border-top: 1px solid var(--line);
-  background: var(--ivory-deep);
-}
-
-.rsvp-cablecar::before {
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 54px;
-  background: linear-gradient(180deg, rgba(255,253,249,.9), transparent);
-  content: "";
-  pointer-events: none;
-}
-
-.rsvp-cablecar img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 52%;
 }
 
 .card-page { padding: 0 0 24px; }
@@ -300,7 +299,7 @@ input[type="radio"] { accent-color: var(--copper-dark); }
 
 @media (max-width: 420px) {
   .rsvp-page { padding: 12px 8px 26px; }
-  .rsvp-shell { padding: 122px 18px 0; }
+  .rsvp-shell { --shell-gutter: 18px; padding: 122px var(--shell-gutter) 0; }
   .rsvp-orchid-decor { top: -8px; left: -18px; width: 220px; }
   .attendance-options { grid-template-columns: 1fr; }
 }
