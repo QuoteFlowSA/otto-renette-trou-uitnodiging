@@ -33,6 +33,7 @@ body {
 }
 
 .envelope-link {
+  position: relative;
   display: inline-block;
   width: min(100%, 540px);
   overflow: hidden;
@@ -56,6 +57,42 @@ body {
 }
 
 .envelope-link img { display: block; width: 100%; height: auto; }
+
+.guest-envelope-label {
+  position: absolute;
+  z-index: 2;
+  top: 66%;
+  left: 50%;
+  display: grid;
+  width: 49%;
+  min-height: 20%;
+  align-content: center;
+  justify-items: center;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--green);
+  background: #fffdf9;
+  line-height: 1.1;
+  pointer-events: none;
+}
+
+.guest-envelope-label::before {
+  margin-bottom: 4px;
+  color: var(--copper-dark);
+  content: "Aan";
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(.62rem, 2.3vw, .9rem);
+  letter-spacing: .08em;
+}
+
+.guest-envelope-name {
+  padding: 0 9px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.2rem, 5.5vw, 2.1rem);
+  font-style: italic;
+  text-align: center;
+}
 
 .tap-note {
   margin: 14px 0 0;
